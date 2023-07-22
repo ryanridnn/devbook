@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn {
+	@apply bg-appblue-100 rounded-lg text-white py-3 font-semibold transition duration-150 hover:bg-appblue-200;
+}
+
+.btn-outlined {
+	@apply bg-appblue-100 bg-opacity-[.1] text-appblue-100 flex items-center text-sm rounded-md font-medium gap-1 py-[6px] px-1 border-[1px] border-appblue-100 transition duration-[.15] hover:bg-opacity-[.16];
+}
+
+.textfield {
+	@apply block w-full bg-appblue-100 bg-opacity-[.07] focus:bg-opacity-[.1] rounded-xl px-[8px] py-[10px] border-[1.5px] border-solid border-appblue-100 outline-none text-appblue-100 font-medium;
+}
+
+.linear-grad {
+	background: linear-gradient(80.01deg, #FDFDFF 3.26%, #F9F9FF 98.71%, #F9F9FF 98.71%);
+}
+
+.spinner {
+	animation: spin 1.25s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.img-hover {
+	box-shadow: 0px 0px 0px 16px #00000000;
+	transition: box-shadow .25s ease;
+}
+
+.img-hover:hover {
+	box-shadow: 0px 0px 0px 6px #00000011;
+}
+
+.ellipsis-3-lines {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+
+/* quill editor */
+
+.ql-toolbar {
+	@apply rounded-t-xl bg-appblue-100 bg-opacity-[.01];
+}
+
+.ql-container {
+	height: 16rem;
+	@apply rounded-b-xl;
+}
+
+.content-renderer > *:not(:first-child) {
+	margin-top: .375rem;
+}
