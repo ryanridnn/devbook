@@ -2,12 +2,14 @@ import { atom, useRecoilValue, useRecoilState } from 'recoil'
 
 export interface Group {
 	id: string,
-	name: string
+	name: string,
+	createdAt: Date | null
 }
 
-export const defaultGroup = {
+export const defaultGroup: Group = {
 	id: '',
-	name: ''
+	name: '',
+	createdAt: null
 }
 
 export const groupState = atom({

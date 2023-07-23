@@ -1,0 +1,97 @@
+.devbook-editor .ql-editor {
+	* {
+		line-height: 1.8;
+	}
+
+	ol, ul {
+		padding-left: 0rem;
+	}
+}
+
+.content-renderer {
+	h1 {
+		font-size: 1.75rem;
+		font-weight: 500;
+	}
+
+	h2 {
+		font-size: 1.4rem;
+		font-weight: 500;
+	}
+
+	h3 {
+		font-size: 1.15rem;
+		font-weight: 500;
+	}
+
+	h4 {
+		font-size: 1rem;
+		font-weight: 500;
+	}
+
+	h5 {
+		font-size: .875rem;
+		font-weight: 500;
+	}
+
+	h6 {
+		font-size: .75rem;
+		font-weight: 500;
+	}
+
+	.ql-font-serif {
+		font-family: 'serif';
+	}
+
+	.ql-font-monospace {
+		font-family: 'monospace';
+	}
+
+	.ql-align-center {
+		text-align: center;
+	}
+
+	.ql-align-right {
+		text-align: right;
+	}
+
+	.ql-align-justify {
+		text-align: justify;
+	}
+
+	ol {
+		list-style-type: decimal;
+		padding-left: 1.5rem;
+	}
+
+	ul {
+		list-style-type: disc;
+		padding-left: 1.5rem;
+	}
+
+	a {
+		@apply text-blue-500 transition;
+
+		&:hover {
+			@apply text-blue-800;
+		}
+	}
+
+	blockquote {
+		@apply relative bg-appgrey-100 rounded p-4 pl-5 overflow-hidden;
+
+		&::before {
+			position: absolute;
+			content: '';
+			top: 0;
+			left: 0;
+			width: .25rem;
+			height: 100%;
+			@apply bg-slate-600;
+		}
+	}
+
+	pre{
+		@apply bg-slate-900 text-white p-4 rounded-lg;
+	}
+}

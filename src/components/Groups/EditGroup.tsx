@@ -33,17 +33,18 @@ export default function EditGroup({ show, close, editCurrentGroup, currentEditin
 	const onSubmit = async () => {
 		if(currentEditingGroup && groupName.length > 0) {
 			try {
-				const editedGroup = await editGroup(currentUser.id, { id: currentEditingGroup.id, name: groupName })
+				const editedGroup = await editGroup(currentUser.id, { id: currentEditingGroup.id, name: groupName, createdAt: currentEditingGroup.createdAt })
 				editCurrentGroup(
 					{ 
 						id: currentEditingGroup.id, 
-						name: groupName 
+						name: groupName,
+						createdAt: currentEditingGroup.createdAt
 					} as Group
 				)
 				if(currentGroup.id === currentEditingGroup.id) {
 					setCurrentGroup((prev: Group) => ({
 						...prev,
-						name: groupName
+						name: groupName,
 					}))
 				}
 				close()

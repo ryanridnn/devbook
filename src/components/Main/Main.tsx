@@ -149,14 +149,14 @@ export default function Main() {
 			 		</div>
 			 		<div className="flex flex-col justify-center items-center min-h-[85vh] lg:min-h-[90vh]">
 			 			<div>
-				 			No Group Yet
+				 			No Group is Selected
 			 			</div>
 			 			<div className="mt-1 text-sm text-appblue-100 px-4">
 			 				<div className="lg:hidden text-center">
-			 					Open up the menu and please add a new group!
+			 					Open up the menu and select a group!
 			 				</div>
 			 				<div className="hidden lg:block">
-			 					Please add a new group!
+			 					Please select a group!
 			 				</div>
 			 			</div>
 			 		</div>

@@ -133,7 +133,7 @@ const EditPaper = ({ paper, onCompleted }: EditPaperProps) => {
 					}}
 				/>
 			</div>
-			<div className="mt-4">
+			<div className="mt-4 devbook-editor">
 				<ReactQuill 
 					theme="snow" 
 					value={content} 

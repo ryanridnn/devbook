@@ -1,10 +1,12 @@
 import {
+	query,
 	collection,
 	doc,
 	getDocs,
 	setDoc,
 	addDoc,
 	deleteDoc,
+	orderBy
 } from 'firebase/firestore'
 
 import { Group } from '@/atoms/groupsAtom'
@@ -13,18 +15,20 @@ import { getSnapsData, getSnapData } from '@/services/firebase/helpers'
 
 export const getGroups = async (userId: string) => {
 	const groupsRef = collection(db, 'users', userId, 'groups')
-	const snaps = await getDocs(groupsRef)
+	const snaps = await getDocs(query(groupsRef, orderBy('createdAt', 'asc')))
 
 	return getSnapsData(snaps)
 }
 
 export const addGroup = async (userId: string, name: string) => {
 	const groupsRef = collection(db, 'users', userId, 'groups')
-	const snap = await addDoc(groupsRef, { name })
+	const createdAt = new Date()
+	const snap = await addDoc(groupsRef, { name, createdAt })
 
 	return { 
 		id: snap.id,
-		name
+		name,
+		createdAt
 	}
 }
 
