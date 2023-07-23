@@ -34,7 +34,7 @@ export default function Modal({ show, close, children, isLarge }: ModalProps) {
 					<div 
 						onClick={close} 
 						className={`
-							absolute top-[0] left-[0] w-screen h-screen bg-black
+							fixed top-[0] left-[0] w-screen h-screen bg-black
 							transition duration-300
 							${showAnimation ? 'bg-opacity-5' : 'bg-opacity-0'}
 						`}
@@ -43,7 +43,7 @@ export default function Modal({ show, close, children, isLarge }: ModalProps) {
 					<div 
 						className={
 							`
-								absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] 
+								fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] 
 								bg-white rounded-[2rem] py-3 px-4 max-w-[100vw] max-h-[95vh] overflow-y-auto
 								transition duration-300 ease-in-out z-[1000]
 								${ isLarge ? 'w-[52rem]' : 'w-[36rem]'}

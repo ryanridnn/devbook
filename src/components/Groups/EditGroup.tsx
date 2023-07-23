@@ -8,7 +8,7 @@ import { editGroup } from '@/services/firebase/groups'
 
 // recoil
 import { useUserValue } from '@/atoms/userAtom'
-import { Group } from '@/atoms/groupsAtom'
+import { useGroupState, Group } from '@/atoms/groupsAtom'
 
 interface EditGroupProps {
 	show: boolean;
@@ -19,6 +19,7 @@ interface EditGroupProps {
 
 export default function EditGroup({ show, close, editCurrentGroup, currentEditingGroup }: EditGroupProps) {
 	const currentUser = useUserValue()
+	const [currentGroup, setCurrentGroup] = useGroupState()
 	const [groupName, setGroupName] = useState<string>('')
 
 	useEffect(() => {
@@ -39,6 +40,12 @@ export default function EditGroup({ show, close, editCurrentGroup, currentEditin
 						name: groupName 
 					} as Group
 				)
+				if(currentGroup.id === currentEditingGroup.id) {
+					setCurrentGroup((prev: Group) => ({
+						...prev,
+						name: groupName
+					}))
+				}
 				close()
 			} catch(e) {
 				console.log(e)

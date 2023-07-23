@@ -20,8 +20,8 @@ export default function Sidebar() {
 			<div 
 				className={
 					`
-						absolute lg:static transition duration-300 min-w-[17rem] bg-appgrey-100 h-screen max-h-screen p-4 z-[999]
-						${isOpen ? 'translate-x-0' : 'translate-x-[-100%] lg:translate-x-0' }
+						fixed lg:static transition duration-300 min-w-[17rem] bg-appgrey-100 h-screen max-h-screen p-4 z-[999]
+						${isOpen ? 'transform-none' : 'translate-x-[-100%] lg:transform-none' }
 					`
 				}
 			>

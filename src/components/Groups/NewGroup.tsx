@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 // components
 import Modal, { ModalHeader } from '@/components/common/Modal'
@@ -31,6 +31,12 @@ export default function NewGroup({ show, close, appendGroup }: NewGroupProps) {
 			}
 		}
 	}
+
+	useEffect(() => {
+		if(!show) {
+			setGroupName('')
+		}
+	}, [show])
 
 	return (
 		<Modal 
