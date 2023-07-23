@@ -44,7 +44,7 @@ export default function Modal({ show, close, children, isLarge }: ModalProps) {
 						className={
 							`
 								fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] 
-								bg-white rounded-[2rem] py-3 px-4 max-w-[94vw] max-h-[95vh] overflow-y-auto
+								bg-white rounded-[2rem] py-3 px-4 max-w-[94vw] max-h-[95vh] overflow-y-auto overflow-x-hidden
 								transition duration-300 ease-in-out z-[1000]
 								${ isLarge ? 'w-[52rem]' : 'w-[36rem]'}
 								${ showAnimation  ? 'opacity-[1]' : 'opacity-[0]'}

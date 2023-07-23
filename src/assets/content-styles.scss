@@ -94,4 +94,8 @@
 	pre{
 		@apply bg-slate-900 text-white p-4 rounded-lg;
 	}
+
+	img {
+		max-width: 100%;
+	}
 }
