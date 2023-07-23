@@ -22,7 +22,7 @@ export default function App() {
   const loadingUser = useAuthListener()
 
   useReset()
-  useMenuResizeListener()
+  // useMenuResizeListener()
 
   return (
       <div className="font-main">

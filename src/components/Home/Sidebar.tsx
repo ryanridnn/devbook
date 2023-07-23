@@ -34,7 +34,7 @@ export default function Sidebar() {
 			<div 
 				className={
 					`
-						absolute top-0 left-0 w-screen h-screen bg-black bg-opacity-20 z-[998]
+						fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-20 z-[998]
 						${isOpen ? 'opacity-1' : 'opacity-0 pointer-events-none'}
 					`
 				}
