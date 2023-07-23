@@ -91,14 +91,14 @@ export default function Main() {
 	return (
 		<>
 			 { currentGroup.id && (
-				<div className="px-7 py-5 w-full min-w-0">
+				<div className="px-7 pb-5 w-full min-w-0">
 					<NewPaper
 						show={showAdd}
 						close={closeAdd}
 					/>
 					<PaperModal />
-					<div className="flex justify-between items-center">
-						<div>
+					<div className="sticky top-0 flex justify-between items-center bg-white z-[997] py-4 lg:pt-5 pb-4">
+						<div className="">
 							<div className="lg:hidden">
 								<MobileMenu />
 							</div>
@@ -121,7 +121,7 @@ export default function Main() {
 							</button>
 						</div>
 					</div>
-					<div className="lg:hidden mt-4 bg-appgrey-100 rounded-xl py-5 px-4 items-center gap-[.75rem]">
+					<div className="lg:hidden mt-2 bg-appgrey-100 rounded-xl py-5 px-4 items-center gap-[.75rem]">
 						<div className="text-2xl text-appblue-100 font-semibold">{ currentGroup.name }</div>
 						<div className="mt-1 text-xs text-slate-600">{ papers.length } { papers.length > 1 ? 'papers' : 'paper'} in total</div>
 					</div>
@@ -130,14 +130,14 @@ export default function Main() {
 							mobile={true}
 						/>
 					</div>
-					<div className="mt-3 b-732:mt-4 grid grid-cols-1 b-480:grid-cols-2 b-648:grid-cols-3 b-1136:grid-cols-4 gap-4">
+					<div className="mt-3 b-732:mt-4 lg:mt-1 grid grid-cols-1 b-480:grid-cols-2 b-648:grid-cols-3 b-1136:grid-cols-4 gap-4">
 						{ !loadingPapers && filteredPapers.map((paper: Paper) => (
 							<PaperCard key={paper.id} paper={paper}/>
 						))}
 					</div>
 					{ !loadingPapers && papers.length === 0 && (
-						<div className="w-full h-full flex items-center justify-center">
-							<div className="mb-20">No Papers</div>
+						<div className="w-full h-[80vh] flex items-center justify-center">
+							<div>No Papers</div>
 						</div>
 					)}
 				</div>
